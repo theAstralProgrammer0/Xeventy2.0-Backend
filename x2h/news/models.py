@@ -37,7 +37,7 @@ class NewsArticle(models.Model):
 
 class VideoNews(models.Model):
     title = models.CharField(max_length=255)
-    content_provider = models.CharField(max_lenght=255)
+    content_provider = models.CharField(max_length=255)
     youtube_url = models.URLField(help_text="YouTube video link")
     published_at = models.DateTimeField(auto_now_add=True)
 
