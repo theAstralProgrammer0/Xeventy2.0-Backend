@@ -1,5 +1,5 @@
 env
-__pycache__
+*__pycache__*
 x2h/x2h/__pycache__
 x2h/x2h/__pycache__/*
-
+*.pyc
