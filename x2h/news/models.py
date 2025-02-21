@@ -15,7 +15,7 @@ class NewsArticle(models.Model):
 
     def get_timeline(self):
         now = timezone.now()
-        time_difference = now - self.publisjed_at
+        time_difference = now - self.published_at
 
         if time_difference < timezone.timedelta(minutes=1):
             return "Just Now"
