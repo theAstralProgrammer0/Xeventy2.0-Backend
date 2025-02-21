@@ -33,3 +33,16 @@ class NewsArticle(models.Model):
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs) # Calling the original save method
+
+
+class VideoNews(models.Model):
+    title = models.CharField(max_length=255)
+    content_provider = models.CharField(max_lenght=255)
+    youtube_url = models.URLField(help_text="YouTube video link")
+    published_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-published_at']
+
+    def __str__(self):
+        return self.title
