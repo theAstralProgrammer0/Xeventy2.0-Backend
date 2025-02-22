@@ -29,17 +29,27 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
 
 INSTALLED_APPS = [
+    'rest_framework',
+    'corsheaders',
+    'news',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'corsheaders',
-    'news',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +74,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ]
 }
+
 
 ROOT_URLCONF = 'x2h.urls'
 
