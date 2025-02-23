@@ -1,5 +1,6 @@
-WSGI config for x2h project.
 """
+WSGI config for x2h project.
+
 It exposes the WSGI callable as a module-level variable named ``application``.
 
 For more information on this file, see
