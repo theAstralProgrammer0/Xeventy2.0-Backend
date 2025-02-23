@@ -14,11 +14,11 @@ class NewsArticleSerializer(serializers.ModelSerializer):
 
     def get_timeline(self, obj):
         # Instantiated obj calls d method here
-        return obj.get_timeline
+        return obj.get_timeline()
 
 
 class VideoNewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = VideoNews
-        fields = ['id', 'title', 'content_provide', 'youtube_url', 'published_at']
+        fields = ['id', 'title', 'content_provider', 'youtube_url', 'published_at']
 

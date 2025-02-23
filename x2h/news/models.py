@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class NewsArticle(models.Model):
@@ -23,7 +24,7 @@ class NewsArticle(models.Model):
             minutes = time_difference.seconds // 60
             return f"{minutes} minute{'s' if minutes > 1 else ''} ago"
         elif time_difference < timezone.timedelta(days=1):
-            hours = time_difference.second // 3600
+            hours = time_difference.seconds // 3600
             return f"{hours} hour{'s' if hours > 1 else ''} ago"
         elif time_difference < timezone.timedelta(days=7):
             days = time_difference.days
